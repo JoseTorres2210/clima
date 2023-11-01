@@ -59,9 +59,10 @@ let cargarFechaActual = () => {
   let cargarOpenMeteo = () => {
 
     //URL que responde con la respuesta a cargar
-    let URL = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m&timezone=auto'; 
-  
-    fetch( URL )
+    let URL1 = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m'; 
+    let URL2 = "https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=precipitation_probability,rain";
+
+    fetch( URL1 )
       .then(responseText => responseText.json())
       .then(responseJSON => {
         
@@ -70,6 +71,7 @@ let cargarFechaActual = () => {
     
         //Referencia al elemento con el identificador plot
         let plotRef = document.getElementById('plot1');
+
     
         //Etiquetas del gráfico
         let labels = responseJSON.hourly.time;
@@ -93,14 +95,49 @@ let cargarFechaActual = () => {
     
         //Objeto con la instanciación del gráfico
         let chart1  = new Chart(plotRef, config);
-    
       })
+
     
       .catch(console.error);
   
+    fetch(URL2)
+      .then(responseText => responseText.json())
+      .then(responseJSON => {
+        
+        //Respuesta en formato JSON
+    
+    
+        //Referencia al elemento con el identificador plot
+        let plotRef = document.getElementById('plot2');
+
+    
+        //Etiquetas del gráfico
+        let labels = responseJSON.hourly.time;
+    
+        //Etiquetas de los datos
+        let data = responseJSON.hourly.temperature_2m;
+    
+        //Objeto de configuración del gráfico
+        let config = {
+          type: 'line',
+          data: {
+            labels: labels, 
+            datasets: [
+              {
+                label: 'Temperature [2m]',
+                data: data, 
+              }
+            ]
+          }
+        };
+    
+        //Objeto con la instanciación del gráfico
+        let chart2  = new Chart(plotRef, config);
+      }) 
   }
   
   
+
  
 
   
