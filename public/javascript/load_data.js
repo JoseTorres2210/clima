@@ -55,4 +55,27 @@ let cargarFechaActual = () => {
 
   
   cargarFechaActual()
+
+  let cargarOpenMeteo = () => {
+
+    //URL que responde con la respuesta a cargar
+    let URL = ''; 
+  
+    fetch( URL )
+      .then(responseText => responseText.json())
+      .then(responseJSON => {
+        
+        console.log(responseJSON);
+        
+        //Respuesta en formato JSON
+  
+      })
+      .catch(console.error);
+  
+  }
+  
+  
+  cargarPrecipitacion()
+  cargarFechaActual()
+  cargarOpenMeteo()
   
