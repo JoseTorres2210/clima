@@ -60,7 +60,7 @@ let cargarFechaActual = () => {
 
     //URL que responde con la respuesta a cargar
     let URL1 = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m'; 
-    let URL2 = "https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=precipitation_probability,rain";
+    let URL2 = "https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=relativehumidity_2m,precipitation_probability";
 
     fetch( URL1 )
       .then(responseText => responseText.json())
@@ -115,7 +115,8 @@ let cargarFechaActual = () => {
         let labels = responseJSON.hourly.time;
     
         //Etiquetas de los datos
-        let data = responseJSON.hourly.precipitation_probability;
+        let data1 = responseJSON.hourly.precipitation_probability;
+        let data2 = responseJSON.hourly.relativehumidity_2m
     
         //Objeto de configuración del gráfico
         let config = {
@@ -125,7 +126,11 @@ let cargarFechaActual = () => {
             datasets: [
               {
                 label: 'Precipitation',
-                data: data, 
+                data: data1, 
+              },
+              {
+                label: 'Humedad',
+                data: data2, 
               }
             ]
           }
