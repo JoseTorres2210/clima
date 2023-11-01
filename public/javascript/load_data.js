@@ -14,9 +14,13 @@ let cargarPrecipitacion = () => {
     for (let index = 0; index < tiempoArr.length; index++) {
         const tiempo = tiempoArr[index];
         const precipitacion = precipitacionArr[index]
+        const uv =uvArr[index]
+        const temperatura = temperaturaArr[index]
 
         if(tiempo.includes(actual)) {
         datos.push(precipitacion)
+        datos.push(uv)
+        datos.push(temperatura)
         }
     }  
 
