@@ -78,4 +78,37 @@ let cargarFechaActual = () => {
   cargarPrecipitacion()
   cargarFechaActual()
   cargarOpenMeteo()
+
+  .then(responseJSON => {
+        
+    //Respuesta en formato JSON
+    
+
+    //Referencia al elemento con el identificador plot
+    let plotRef = document.getElementById('plot1');
+
+    //Etiquetas del gráfico
+    let labels = responseJSON.hourly.time;
+
+    //Etiquetas de los datos
+    let data = responseJSON.hourly.temperature_2m;
+
+    //Objeto de configuración del gráfico
+    let config = {
+      type: 'line',
+      data: {
+        labels: labels, 
+        datasets: [
+          {
+            label: 'Temperature [2m]',
+            data: data, 
+          }
+        ]
+      }
+    };
+
+    //Objeto con la instanciación del gráfico
+    let chart1  = new Chart(plotRef, config);
+
+  })
   
