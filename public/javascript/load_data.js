@@ -115,7 +115,7 @@ let cargarFechaActual = () => {
         let labels = responseJSON.hourly.time;
     
         //Etiquetas de los datos
-        let data = responseJSON.hourly.temperature_2m;
+        let data = responseJSON.hourly.precipitation_probability;
     
         //Objeto de configuración del gráfico
         let config = {
@@ -124,7 +124,7 @@ let cargarFechaActual = () => {
             labels: labels, 
             datasets: [
               {
-                label: 'Temperature [2m]',
+                label: 'Precipitation',
                 data: data, 
               }
             ]
