@@ -203,7 +203,7 @@ let cargarFechaActual = () => {
 
      // Lea la entrada de almacenamiento local
      let cityStorage = localStorage.getItem(selectedCity);
-
+    
     if (cityStorage == null) {
     try {
 
