@@ -204,23 +204,7 @@ let cargarFechaActual = () => {
      // Lea la entrada de almacenamiento local
      let cityStorage = localStorage.getItem(selectedCity);
 
-     if (cityStorage == null) {
-     
-         try {
-          
-           // Guarde la entrada de almacenamiento local
-           await localStorage.setItem(selectedCity, responseText)
- 
-         } catch (error) {
-            console.log(error)
-         }
- 
-     } else {
-         // Procese un valor previo
-         parseXML(cityStorage)
-     }
- 
-
+    if (cityStorage == null) {
     try {
 
         //API key
@@ -232,9 +216,17 @@ let cargarFechaActual = () => {
         
         await parseXML(responseText)
 
+        // Guarde la entrada de almacenamiento local
+        await localStorage.setItem(selectedCity, responseText)
+
     } catch (error) {
         console.log(error)
+    } 
     }
+    else {
+      // Procese un valor previo
+      parseXML(cityStorage)
+  }
 
 }
   
