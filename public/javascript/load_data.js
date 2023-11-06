@@ -165,12 +165,26 @@ let cargarFechaActual = () => {
   }
   
   //Callback
-  let selectListener = (event) => {
-  
+  let selectListener = async (event) => {
+
     let selectedCity = event.target.value
-    console.log(selectedCity);
-  
-  }
+
+    try {
+
+        //API key
+        let APIkey = 'b2d0ca46b16e304d53a781c0e8207a2d'
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&mode=xml&appid=${APIkey}`
+
+        let response = await fetch(url)
+        let responseText = await response.text()
+        
+        await parseXML(responseText)
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
   
   let loadForecastByCity = () => {
   
