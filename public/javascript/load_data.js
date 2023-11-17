@@ -8,27 +8,25 @@ let cargarPrecipitacion = () => {
     let actual = fechaActual();
 
     //Defina un arreglo temporal vacío
-    let datos = []
+    let datosPrecipitacion = []
     
     //Itere en el arreglo tiempoArr para filtrar los valores de precipitacionArr que sean igual con la fecha actual
     for (let index = 0; index < tiempoArr.length; index++) {
         const tiempo = tiempoArr[index];
         const precipitacion = precipitacionArr[index]
-        const uv =uvArr[index]
-        const temperatura = temperaturaArr[index]
+
 
         if(tiempo.includes(actual)) {
-        datos.push(precipitacion)
-        datos.push(uv)
-        datos.push(temperatura)
+        datosPrecipitacion.push(precipitacion)
+
         }
     }  
 
     //Con los valores filtrados, obtenga los valores máximo, promedio y mínimo
-    let max = Math.max(...datos);
-    let min = Math.min(...datos);
-    let sum = datos.reduce((a, b) => a + b, 0);
-    let prom = (sum / datos.length) || 0;
+    let max = Math.max(...datosPrecipitacion);
+    let min = Math.min(...datosPrecipitacion);
+    let sum = datosPrecipitacion.reduce((a, b) => a + b, 0);
+    let prom = (sum / datosPrecipitacion.length) || 0;
 
     //Obtenga la referencia a los elementos HTML con id precipitacionMinValue, precipitacionPromValue y precipitacionMaxValue
     let precipitacionMinValue = document.getElementById("precipitacionMinValue")
@@ -41,8 +39,87 @@ let cargarPrecipitacion = () => {
     precipitacionMaxValue.textContent = `Max ${max} [mm]`
   
   }
-  
+
   cargarPrecipitacion()
+
+let cargarUv = () => {
+
+    //Obtenga la fecha actual
+    let actual = fechaActual();
+
+    //Defina un arreglo temporal vacío
+
+    let datosUv=[]
+
+    
+    //Itere en el arreglo tiempoArr para filtrar los valores 
+    for (let index = 0; index < tiempoArr.length; index++) {
+        const tiempo = tiempoArr[index];
+        const uv =uvArr[index]
+
+
+        if(tiempo.includes(actual)) {
+        datosUv.push(uv)
+        }
+    }  
+
+    //Con los valores filtrados, obtenga los valores máximo, promedio y mínimo
+    let max = Math.max(...datosUv);
+    let min = Math.min(...datosUv);
+    let sum = datosUv.reduce((a, b) => a + b, 0);
+    let prom = (sum / datosUv.length) || 0;
+
+    //Obtenga la referencia a los elementos HTML 
+    let uvMinValue = document.getElementById("uvMinValue")
+    let uvPromValue = document.getElementById("uvPromValue")
+    let uvMaxValue = document.getElementById("uvMaxValue")  
+
+    //Actualice los elementos HTML con los valores correspondientes
+    uvMinValue.textContent = `Min ${min} [--]`
+    uvPromValue.textContent = `Prom ${ Math.round(prom * 100) / 100 } [--]`
+    uvMaxValue.textContent = `Max ${max} [--]`
+  
+  }
+  
+  cargarUv()
+
+let cargarTemperatura= () => {
+
+    //Obtenga la fecha actual
+    let actual = fechaActual();
+
+    //Defina un arreglo temporal vacío
+    let datosTemperatura=[]
+    
+    //Itere en el arreglo tiempoArr para filtrar los valores 
+    for (let index = 0; index < tiempoArr.length; index++) {
+        const tiempo = tiempoArr[index];
+        const temperatura = temperaturaArr[index]
+
+        if(tiempo.includes(actual)) {
+        datosTemperatura.push(temperatura)
+        }
+    }  
+
+    //Con los valores filtrados, obtenga los valores máximo, promedio y mínimo
+    let max = Math.max(...datosTemperatura);
+    let min = Math.min(...datosTemperatura);
+    let sum = datosTemperatura.reduce((a, b) => a + b, 0);
+    let prom = (sum / datosTemperatura.length) || 0;
+
+    //Obtenga la referencia a los elementos HTML
+    let temperaturaMinValue = document.getElementById("temperaturaMinValue")
+    let temperaturaPromValue = document.getElementById("temperaturaPromValue")
+    let temperaturaMaxValue = document.getElementById("temperaturaMaxValue")  
+
+    //Actualice los elementos HTML con los valores correspondientes
+    temperaturaMinValue.textContent = `Min ${min} [°C]`
+    temperaturaPromValue.textContent = `Prom ${ Math.round(prom * 100) / 100 } [°C]`
+    temperaturaMaxValue.textContent = `Max ${max} [°C]`
+  
+  }  
+
+  cargarTemperatura()
 
 let cargarFechaActual = () => {
   
