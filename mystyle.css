@@ -1,3 +1,86 @@
-table.default tr:not(:nth-child(1)):not(:nth-child(2)) {
-    display: none;
+/* Estilos para el fondo de la página */
+body {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: 'Montserrat', sans-serif; /* Cambia la tipografía si lo deseas */
+    color: #333; /* Cambia el color del texto si es necesario */
+    background-image: url('https://www.daysoftheyear.com/wp-content/uploads/look-up-at-the-sky-day-1.jpg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Para cubrir toda la pantalla con la imagen */
+    background-attachment: fixed; /* Fijar la imagen para que se mantenga fija mientras se desplaza el contenido */
+    
+
+}
+
+
+header {
+    background-color: rgb(24, 22, 151); /* Color de fondo para el encabezado */
+    padding: 20px;
+}
+
+/* Estilos para las secciones */
+#indicadores {
+    background-color: rgb(153, 184, 244);
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+#graficos {
+    background-color: rgb(153, 184, 244);
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+#datos {
+    background-color: rgb(153, 184, 244);
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+#mareas {
+    background-color: rgb(153, 184, 244);
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+#nav{
+    
+}
+
+/* Estilos para los títulos de sección */
+h4 {
+    color: #232323; /* Color del título de la sección */
+}
+
+h6 {
+    color: #000000; /* Color del título de la sección */
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar-nav .nav-link {
+    color: #333; /* Color del texto del enlace */
+}
+
+/* Estilos para los botones */
+.btn {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #f08d8d; /* Color de fondo de las tarjetas */
+    border: 1px solid #ccc; /* Borde de las tarjetas */
+}
+
+/* Estilos para las tablas */
+.table {
+    background-color: #e93535; /* Color de fondo de la tabla */
+    border: 1px solid #ccc; /* Borde de la tabla */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #f05252; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    padding: 20px;
 }
