@@ -318,29 +318,26 @@ let cargarFechaActual = () => {
   loadForecastByCity()
 
   let loadExternalTable = async (event) => {
-  
-    //Requerimiento asíncrono
-    try{
-      let responseXml = await fetch('https://www.gestionderiesgos.gob.ec/monitoreo-de-inundaciones/');
+    // Requerimiento asíncrono
+    try {
+      let proxyURL = 'https://cors-anywhere.herokuapp.com/';
+      let originalURL = 'https://www.gestionderiesgos.gob.ec/monitoreo-de-inundaciones/';
+      
+      // Fetch data using the CORS-Proxy
+      let responseXml = await fetch(proxyURL + originalURL);
       let dataXml = await responseXml.text();
-
+  
       let parser = new DOMParser();
       let xmlDoc = parser.parseFromString(dataXml, 'text/xml');
-
+  
       let elementoXML = xmlDoc.querySelector("#postcontent table");
-
-      let elementoDOM= parser.getElementById("monitoreo");
-
-
-      elementoDOM.innerHTML = elementoXML.outerHTML
+  
+      let elementoDOM = document.getElementById("monitoreo");
+  
+      elementoDOM.innerHTML = elementoXML.outerHTML;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
-    let proxyURL = 'https://cors-anywhere.herokuapp.com/'
-    let endpoint = proxyURL + 'https://www.gestionderiesgos.gob.ec/monitoreo-de-inundaciones/'
-    
-   
-   }
+  };
    
    loadExternalTable()
