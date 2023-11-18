@@ -323,12 +323,12 @@ let cargarFechaActual = () => {
       let proxyURL = 'https://cors-anywhere.herokuapp.com/';
       let originalURL = 'https://www.gestionderiesgos.gob.ec/monitoreo-de-inundaciones/';
       
-      // Fetch data using the CORS-Proxy
+      
       let responseXml = await fetch(proxyURL + originalURL);
       let dataXml = await responseXml.text();
   
       let parser = new DOMParser();
-      let xmlDoc = parser.parseFromString(dataXml, 'text/xml');
+      let xmlDoc = parser.parseFromString(dataXml, "text/html");
   
       let elementoXML = xmlDoc.querySelector("#postcontent table");
   
