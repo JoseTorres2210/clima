@@ -1,59 +1,67 @@
-/* Estilos para el fondo de la página */
+
 body {
     background-color: rgba(255, 255, 255, 0.2);
-    font-family: 'Montserrat', sans-serif; /* Cambia la tipografía si lo deseas */
-    color: #333; /* Cambia el color del texto si es necesario */
-    background-image: url('https://www.daysoftheyear.com/wp-content/uploads/look-up-at-the-sky-day-1.jpg'); /* Reemplaza 'ruta_de_tu_imagen.jpg' con la ruta de tu imagen */
-    background-size: cover; /* Para cubrir toda la pantalla con la imagen */
-    background-attachment: fixed; /* Fijar la imagen para que se mantenga fija mientras se desplaza el contenido */
+    font-family: 'Montserrat', sans-serif; 
+    color: #333; 
+    background-image: url('https://www.daysoftheyear.com/wp-content/uploads/look-up-at-the-sky-day-1.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
     
 
 }
 
 
 header {
-    background-color: rgba(255, 255, 255, 0.7); /* Color de fondo para el encabezado */
+    font-family: 'Montserrat', sans-serif; 
+    background-color: rgba(255, 255, 255, 0.7); 
     padding: 20px;
 }
 
-/* Estilos para las secciones */
+
 #indicadores {
+    font-family: 'Montserrat', sans-serif; 
     background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #graficos {
+    font-family: 'Montserrat', sans-serif; 
     background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #datos {
+    font-family: 'Montserrat', sans-serif; 
     background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #mareas {
+    font-family: 'Montserrat', sans-serif; 
     background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
-
-
-/* Estilos para los títulos de sección */
 h4 {
-    color: #232323; /* Color del título de la sección */
+    font-family: 'Montserrat', sans-serif; 
+    color: #232323; 
 }
 
 h6 {
-    color: #000000; /* Color del título de la sección */
+    font-family: 'Montserrat', sans-serif; 
+    color: #000000; 
 }
-
 
 .navbar-nav .nav-link {
     color: #333; 
+}
+
+table.default tr:not(:nth-child(1)):not(:nth-child(2)) {
+    font-family: 'Montserrat', sans-serif; 
+    display: none;
 }
 
