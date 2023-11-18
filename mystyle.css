@@ -12,38 +12,36 @@ body {
 
 
 header {
-    background-color: rgb(24, 22, 151); /* Color de fondo para el encabezado */
+    background-color: rgba(255, 255, 255, 0.7); /* Color de fondo para el encabezado */
     padding: 20px;
 }
 
 /* Estilos para las secciones */
 #indicadores {
-    background-color: rgb(153, 184, 244);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #graficos {
-    background-color: rgb(153, 184, 244);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #datos {
-    background-color: rgb(153, 184, 244);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
 #mareas {
-    background-color: rgb(153, 184, 244);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 40px 20px;
     margin-top: 20px;
 }
 
-#nav{
-    
-}
+
 
 /* Estilos para los títulos de sección */
 h4 {
@@ -54,33 +52,8 @@ h6 {
     color: #000000; /* Color del título de la sección */
 }
 
-/* Estilos para los enlaces de navegación */
+
 .navbar-nav .nav-link {
-    color: #333; /* Color del texto del enlace */
+    color: #333; 
 }
 
-/* Estilos para los botones */
-.btn {
-    background-color: #007bff; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none;
-}
-
-/* Estilos para las tarjetas */
-.card {
-    background-color: #f08d8d; /* Color de fondo de las tarjetas */
-    border: 1px solid #ccc; /* Borde de las tarjetas */
-}
-
-/* Estilos para las tablas */
-.table {
-    background-color: #e93535; /* Color de fondo de la tabla */
-    border: 1px solid #ccc; /* Borde de la tabla */
-}
-
-/* Estilos para el pie de página */
-footer {
-    background-color: #f05252; /* Color de fondo del pie de página */
-    color: #fff; /* Color del texto del pie de página */
-    padding: 20px;
-}
